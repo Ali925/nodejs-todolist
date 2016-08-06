@@ -1,0 +1,33 @@
+<h1>TODO manager</h1>
+
+<!-- три скобки, не экранировать HTML! -->
+{{{content}}}
+
+<h2>Добавить задачу</h2>
+
+{{#if error}}<h2>{{error}}</h2>{{/if}}
+
+<form method="POST">
+	Задача: <input type="text" name="task">
+	Приоритет: <input type="number" name="priority" max='5' min='1'>	
+	<input type="submit" value="Добавить">
+</form>
+
+<h2>Изменить задачу</h2>
+
+<form action="/change" method="POST">
+	ID: <input type="text" name="id">
+	Задача: <input type="text" name="task">
+	Приоритет: <input type="number" name="priority" max='5' min='1'>	
+	<input type="submit" value="Изменить">
+</form>
+
+<h2>Удалить задачу</h2>
+
+<form action="/delete" method="POST">
+	ID: <input type="text" name="id">	
+	<input type="submit" value="Удалить">
+</form>
+
+<a href="/logout"><button>Выйти</button></a>
+&copy; Школа Программирования

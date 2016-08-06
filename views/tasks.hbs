@@ -1,0 +1,6 @@
+<h2>Список задач</h2>
+<table style="border-spacing: 5px;"><tr><th>ID</th><th>Task</th><th>Priority</th><th>Complete</th></tr>
+{{#each tasks}}
+	<tr><td>{{id}}</td><td>{{task}}</td><td>{{priority}}</td><td>{{#if done}}Done{{else}}Not done{{/if}}</td><td><form action="/complete" method="POST"><input type="hidden" name="id" value="{{id}}"><input type="submit" value="Complete"></form></td></tr>
+{{/each}}
+</table>
